@@ -16,13 +16,20 @@ Expected result
 Open index.html in your browser. Every time you refresh the page,
 a different greeting should be displayed in the box.
 */
-
-fetch("https://codeyourfuture.herokuapp.com/api/greetings")
+let myGreetBtn = document.getElementById("btn");
+myGreetBtn.addEventListener("click", randomQuote);
+function randomQuote() {
+fetch("https://api.quotable.io/random")
   .then(function (response) {
-    return response.text();
+    return response.json();
   })
-  .then(function (greeting) {
+  .then(function (data) {
     // Write the code to display the greeting text here
-    let myGreet = document.getElementById("greeting-text");
-    myGreet.innerText = greeting;
-  });
+
+      let myGreet = document.getElementById("greeting-text");
+      let author = document.getElementById("author");
+
+      myGreet.innerText = `${data.content}`;
+      author.innerHTML =  data.author;
+    })
+  }

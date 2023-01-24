@@ -9,19 +9,35 @@
       #greeting-text {
         font-size: 20px;
         border: 1px solid #ccc;
-        background-color: #ddd;
-        width: 20%;
+        color: wheat;
+        background-color: rgba(69, 13, 13, 0.724);
+        width: 40%;
+        height: 40%;
         text-align: center;
         margin: 0 50px;
         padding: 30px;
+      }
+      #content {
+        width: 300px;
+        height: 400px;
+        margin:  0 auto;
+        background-color: bisque;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     </style>
   </head>
 
   <body>
     <h1>A greeting in a random language...</h1>
-    <p id="greeting-text"></p>
+    <div id="content">
 
+      <small id="author">author</small>
+      <p id="greeting-text">here the quote display</p>
+      <button id="btn" style="width: 100px; height: 40px; color: wheat; background-color: black; border-radius: 1rem;">next  Quote </button>
+    </div>
     <script src="exercise.js"></script>
   </body>
 </html>
